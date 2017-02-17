@@ -1,3 +1,8 @@
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.io.File;
+import java.io.*;
+import java.io.Console;
 
 /**
  *
@@ -20,6 +25,7 @@ public class NewJPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
+	entries = new ArrayList<Entry>();
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -173,7 +179,17 @@ public class NewJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 	//Saving process:
-        
+	//Entry e = new Entry(cNombre, cEdad, cPais, cProv, cCiudad, cDoc);
+        //entries.add(e);
+	try{
+	    //e.printToFile(new PrintWriter(new File("test.txt")));
+	    //PrintWriter p = new PrintWriter(new File("test.txt"));
+	    //p.print("tata");
+	    FileOutputStream out = new FileOutputStream("test.txt");
+	    out.write('t');
+	}catch(Exception ex){
+	    System.out.println("tata");
+	}
     }                                        
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -226,4 +242,6 @@ public class NewJPanel extends javax.swing.JPanel {
     String cProv;
     String cCiudad;
     String cDoc;
+
+    ArrayList<Entry> entries;
 }
