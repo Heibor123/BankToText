@@ -17,13 +17,14 @@ public class Entry {
 	doc = doc_;
     }
 
-    void printToFile(PrintWriter out){
-	out.println("-----------------------------------------------");
-	out.println("Nombre: " + nombre);
-	out.println("País: " + pais);
-	out.println("Provincia" + prov);
-	out.println("Ciudad" + ciudad);
-	out.println("Edad" + edad);
-	out.println("Número de Documento: " + doc);
-    }
+   try(PrintWriter out = new PrintWriter("filename.txt"){
+	out.printl(nombre);
+        out.printl(pais);
+        out.printl(prov);
+        out.printl(ciudad);
+        out.printl(edad);
+	out.printl(doc);
+}
+	   
+}
 }
